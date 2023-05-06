@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/AsteroidMat.tres" type="Material" id=1]
+[ext_resource path="res://Resources/Asteroid.tres" type="Shape" id=2]
+[ext_resource path="res://Scripts/BaseAsteroid.gd" type="Script" id=3]
+
+[node name="Asteroid" type="CSGSphere"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.01267, 0, 6.21881 )
+radius = 2.0
+material = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = ExtResource( 2 )
+
+[connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
