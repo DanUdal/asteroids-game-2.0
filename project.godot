@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="asteroids game 2.0"
+run/main_scene="res://Scenes/GameScene.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -20,6 +21,7 @@ Controller="*res://Scripts/Controller.gd"
 [display]
 
 window/size/height=1024
+window/size/fullscreen=true
 window/stretch/mode="2d"
 
 [gui]

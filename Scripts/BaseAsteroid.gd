@@ -29,6 +29,6 @@ func _on_Area_area_entered(area):
 		rng.randomize()
 		theta = rng.randf_range(0, 2 * PI)
 		translation = Vector3(R * sin(theta), 0, R * cos(theta))
-	else:
+	elif area.get_parent().name != "Player":
 		area.get_parent().queue_free()
 		queue_free()
